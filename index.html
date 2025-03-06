@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__left">
+      <button class="header__menu-btn">
+        <img src="assets/icons/menu.svg" alt="Menu">
+      </button>
+      <a href="index.html" class="header__logo">
+        <img src="assets/youtube-logo.svg" alt="YouTube">
+      </a>
+    </div>
+    <div class="header__center">
+      <form class="header__search-form">
+        <div class="header__search-container">
+          <input type="text" placeholder="Buscar" class="header__search-input">
+          <button class="header__search-btn">
+            <img src="assets/icons/search.svg" alt="Buscar">
+          </button>
+        </div>
+        <button class="header__voice-btn">
+          <img src="assets/icons/mic.svg" alt="Búsqueda por voz">
+        </button>
+      </form>
+    </div>
+    <div class="header__right">
+      <button class="header__icon-btn">
+        <img src="assets/icons/video-plus.svg" alt="Crear">
+      </button>
+      <button class="header__icon-btn">
+        <img src="assets/icons/bell.svg" alt="Notificaciones">
+      </button>
+      <button class="header__profile-btn">
+        <img src="assets/profile.jpg" alt="Perfil">
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__section">
+        <a href="#" class="sidebar__item sidebar__item--active">
+          <img src="assets/icons/home.svg" alt="Inicio">
+          <span>Inicio</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/shorts.svg" alt="Shorts">
+          <span>Shorts</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/subscriptions.svg" alt="Suscripciones">
+          <span>Suscripciones</span>
+        </a>
+      </div>
+      
+      <div class="sidebar__section">
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/library.svg" alt="Biblioteca">
+          <span>Biblioteca</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/history.svg" alt="Historial">
+          <span>Historial</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/your-videos.svg" alt="Tus videos">
+          <span>Tus videos</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/watch-later.svg" alt="Ver más tarde">
+          <span>Ver más tarde</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/icons/liked.svg" alt="Videos que me gustan">
+          <span>Videos que me gustan</span>
+        </a>
+      </div>
+      
+      <div class="sidebar__section">
+        <h3 class="sidebar__title">Suscripciones</h3>
+        <a href="#" class="sidebar__item">
+          <img src="assets/channels/channel1.jpg" alt="Canal 1" class="sidebar__channel-img">
+          <span>Canal de Programación</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/channels/channel2.jpg" alt="Canal 2" class="sidebar__channel-img">
+          <span>Tutoriales HTML</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/channels/channel3.jpg" alt="Canal 3" class="sidebar__channel-img">
+          <span>CSS Masters</span>
+        </a>
+        <a href="#" class="sidebar__item">
+          <img src="assets/channels/channel4.jpg" alt="Canal 4" class="sidebar__channel-img">
+          <span>JavaScript Pro</span>
+        </a>
+      </div>
+      
+      <div class="sidebar__footer">
+        <div class="sidebar__footer-links">
+          <a href="#">Información</a>
+          <a href="#">Prensa</a>
+          <a href="#">Derechos de autor</a>
+        </div>
+        <div class="sidebar__footer-links">
+          <a href="#">Contactar</a>
+          <a href="#">Creadores</a>
+          <a href="#">Publicidad</a>
+        </div>
+        <div class="sidebar__footer-links">
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Política y seguridad</a>
+        </div>
+        <div class="sidebar__footer-copyright">
+          © 2023 Google LLC
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Categories -->
+      <div class="categories">
+        <button class="categories__item categories__item--active">Todo</button>
+        <button class="categories__item">Música</button>
+        <button class="categories__item">Videojuegos</button>
+        <button class="categories__item">Programación</button>
+        <button class="categories__item">Noticias</button>
+        <button class="categories__item">En directo</button>
+        <button class="categories__item">Deportes</button>
+        <button class="categories__item">Animación</button>
+        <button class="categories__item">Cocina</button>
+        <button class="categories__item">Comedia</button>
+      </div>
+
+      <!-- Videos Grid -->
+      <div class="videos-grid" id="videos-container">
+        <!-- Video cards will be generated by JavaScript -->
+      </div>
+
+      <!-- Shorts Section -->
+      <div class="shorts-section">
+        <div class="shorts-section__header">
+          <div class="shorts-section__title">
+            <img src="assets/icons/shorts-red.svg" alt="Shorts">
+            <h2>Shorts</h2>
+          </div>
+        </div>
+        <div class="shorts-grid" id="shorts-container">
+          <!-- Shorts will be generated by JavaScript -->
+        </div>
+      </div>
+
+      <!-- More Videos -->
+      <div class="videos-grid" id="more-videos-container">
+        <!-- More video cards will be generated by JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

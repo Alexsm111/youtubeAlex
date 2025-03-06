@@ -1,0 +1,138 @@
+.sidebar {
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  width: $sidebar-width;
+  height: calc(100vh - #{$header-height});
+  background-color: $color-background;
+  overflow-y: auto;
+  z-index: 90;
+  padding: 12px 0;
+  
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #717171;
+    border-radius: 4px;
+  }
+  
+  &__section {
+    padding: 8px 0;
+    border-bottom: 1px solid $color-border;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &__title {
+    padding: 8px 24px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    height: 40px;
+    
+    &:hover {
+      background-color: $color-hover;
+    }
+    
+    &--active {
+      background-color: $color-active;
+      
+      &:hover {
+        background-color: $color-active;
+      }
+    }
+    
+    img {
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
+    }
+    
+    .sidebar__channel-img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    span {
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  &__footer {
+    padding: 16px 24px;
+    font-size: 13px;
+    color: $color-text-secondary;
+    
+    &-links {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+      
+      a {
+        margin-right: 8px;
+        margin-bottom: 8px;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    &-copyright {
+      font-size: 12px;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-lg) {
+  .sidebar {
+    width: $sidebar-collapsed-width;
+    
+    &__item {
+      flex-direction: column;
+      padding: 16px 0;
+      height: auto;
+      
+      img {
+        margin-right: 0;
+        margin-bottom: 6px;
+      }
+      
+      span {
+        font-size: 10px;
+      }
+    }
+    
+    &__title,
+    &__footer {
+      display: none;
+    }
+  }
+}
+
+// For video page
+.video-page {
+  .sidebar {
+    display: none;
+  }
+}
+

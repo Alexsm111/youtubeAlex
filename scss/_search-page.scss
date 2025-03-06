@@ -1,0 +1,31 @@
+.search-results {
+  .search-filters {
+    display: flex;
+    margin-bottom: 24px;
+    
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      background-color: #272727;
+      border-radius: 8px;
+      font-size: 14px;
+      
+      &:hover {
+        background-color: #383838;
+      }
+      
+      img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+

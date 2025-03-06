@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  margin-top: $header-height;
+}
+
+.main {
+  flex: 1;
+  margin-left: $sidebar-width;
+  padding: 24px 24px 0;
+  
+  // Categories
+  .categories {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+    
+    &__item {
+      flex-shrink: 0;
+      padding: 8px 12px;
+      margin-right: 12px;
+      background-color: #272727;
+      border-radius: 8px;
+      font-size: 14px;
+      
+      &:hover {
+        background-color: #383838;
+      }
+      
+      &--active {
+        background-color: $color-text-primary;
+        color: $color-background;
+      }
+    }
+  }
+  
+  // Videos Grid
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  
+  // Shorts Section
+  .shorts-section {
+    margin-bottom: 40px;
+    
+    &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      
+      &__title {
+        display: flex;
+        align-items: center;
+        
+        img {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+        }
+        
+        h2 {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+    
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 16px;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-lg) {
+  .main {
+    margin-left: $sidebar-collapsed-width;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .main {
+    padding: 16px 16px 0;
+    
+    .videos-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .main {
+    .videos-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .shorts-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+  }
+}
+
