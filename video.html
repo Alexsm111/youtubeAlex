@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutorial HTML y CSS - YouTube</title>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 <body class="video-page">
   <!-- Header -->
   <header class="header">
     <div class="header__left">
+      <button class="header__menu-btn">
+        <img src="assets/icons/menu.svg" alt="Menu">
+      </button>
       <a href="index.html" class="header__logo">
         <img src="assets/youtube-logo.svg" alt="YouTube">
       </a>
@@ -18,25 +21,33 @@
     <div class="header__center">
       <form class="header__search-form">
         <div class="header__search-container">
-          <input type="text" placeholder="Buscar" class="header__search-input">
+          <input type="text" placeholder="Buscar" class="header__search-input" value="html">
           <button class="header__search-btn">
             <img src="assets/icons/search.svg" alt="Buscar">
           </button>
         </div>
         <button class="header__voice-btn">
-          <img src="assets/icons/mic.svg" alt="Búsqueda por voz">
+          <span class="material-symbols-outlined">
+            mic
+            </span>
         </button>
       </form>
     </div>
     <div class="header__right">
       <button class="header__icon-btn">
-        <img src="assets/icons/video-plus.svg" alt="Crear">
+        <span class="material-symbols-outlined">
+          add_circle
+          </span>
       </button>
       <button class="header__icon-btn">
-        <img src="assets/icons/bell.svg" alt="Notificaciones">
+        <span class="material-symbols-outlined">
+          notifications
+          </span>
       </button>
       <button class="header__profile-btn">
-        <img src="assets/profile.jpg" alt="Perfil">
+        <span class="material-symbols-outlined">
+          account_circle
+          </span>
       </button>
     </div>
   </header>
@@ -60,23 +71,33 @@
           
           <div class="video-info__actions">
             <button class="video-info__action-btn">
-              <img src="assets/icons/like.svg" alt="Me gusta">
+              <span class="material-symbols-outlined">
+                thumb_up
+                </span>
               <span>24K</span>
             </button>
             <button class="video-info__action-btn">
-              <img src="assets/icons/dislike.svg" alt="No me gusta">
+              <span class="material-symbols-outlined">
+                thumb_down
+                </span>
               <span></span>
             </button>
             <button class="video-info__action-btn">
-              <img src="assets/icons/share.svg" alt="Compartir">
+              <span class="material-symbols-outlined">
+                share
+                </span>
               <span>Compartir</span>
             </button>
             <button class="video-info__action-btn">
-              <img src="assets/icons/save.svg" alt="Guardar">
+              <span class="material-symbols-outlined">
+                save
+                </span>
               <span>Guardar</span>
             </button>
             <button class="video-info__action-btn">
-              <img src="assets/icons/more.svg" alt="Más">
+              <span class="material-symbols-outlined">
+                more_horiz
+                </span>
             </button>
           </div>
         </div>
@@ -84,7 +105,9 @@
         <!-- Channel Info -->
         <div class="channel-info">
           <div class="channel-info__left">
-            <img src="assets/channels/channel2.jpg" alt="Canal" class="channel-info__img">
+            <span class="material-symbols-outlined">
+              person
+              </span>
             <div class="channel-info__details">
               <h3 class="channel-info__name">Tutoriales HTML</h3>
               <p class="channel-info__subs">500K suscriptores</p>
@@ -105,13 +128,17 @@
         <div class="comments-section__header">
           <h3>1.245 comentarios</h3>
           <div class="comments-section__sort">
-            <img src="assets/icons/sort.svg" alt="Ordenar">
+            <span class="material-symbols-outlined">
+              arrow_downward
+              </span>
             <span>Ordenar por</span>
           </div>
         </div>
         
         <div class="comments-section__add">
-          <img src="assets/profile.jpg" alt="Perfil" class="comments-section__profile">
+          <span class="material-symbols-outlined">
+            person
+            </span>
           <input type="text" placeholder="Añade un comentario..." class="comments-section__input">
         </div>
         
