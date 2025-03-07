@@ -1,10 +1,10 @@
-// Wait for DOM to be fully loaded
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Generate search results
+ 
   generateSearchResults("search-results-container", 15)
 })
 
-// Function to generate search results
+
 function generateSearchResults(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
@@ -16,27 +16,27 @@ function generateSearchResults(containerId, count) {
       window.location.href = "video.html"
     }
 
-    // Generate random duration
+    
     const minutes = Math.floor(Math.random() * 30) + 1
     const seconds = Math.floor(Math.random() * 60)
     const duration = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`
 
-    // Generate random views
+    
     const views = Math.floor(Math.random() * 10000000)
     const formattedViews = formatViews(views)
 
-    // Generate random time
+
     const timeAgo = generateRandomTimeAgo()
 
-    // Generate random thumbnail
+
     const randomId = Math.floor(Math.random() * 1000)
     const thumbnailUrl = `https://picsum.photos/id/${randomId}/360/202`
 
-    // Generate random channel
+
     const channelId = Math.floor(Math.random() * 10) + 1
     const channelImg = `assets/channels/channel${channelId <= 4 ? channelId : 1}.jpg`
 
-    // Generate random title with "HTML" in it (since it's a search for "html")
+
     const titles = [
       "Tutorial completo de HTML para principiantes - Aprende HTML desde cero",
       "HTML y CSS - Curso completo con proyectos",
@@ -51,7 +51,7 @@ function generateSearchResults(containerId, count) {
     ]
     const randomTitle = titles[Math.floor(Math.random() * titles.length)]
 
-    // Generate random channel name
+
     const channels = [
       "Tutoriales HTML",
       "CSS Masters",
@@ -66,7 +66,7 @@ function generateSearchResults(containerId, count) {
     ]
     const randomChannel = channels[Math.floor(Math.random() * channels.length)]
 
-    // Generate random description with "HTML" in it
+
     const descriptions = [
       "En este tutorial aprenderás los fundamentos de HTML para crear tu primera página web desde cero. Veremos elementos básicos, estructura y mucho más.",
       "Curso completo de HTML donde aprenderás a estructurar páginas web profesionales con las mejores prácticas y técnicas modernas.",
@@ -76,6 +76,7 @@ function generateSearchResults(containerId, count) {
     ]
     const randomDescription = descriptions[Math.floor(Math.random() * descriptions.length)]
 
+    
     searchResultCard.innerHTML = `
       <div class="search-result-card__thumbnail">
         <img src="${thumbnailUrl}" alt="Thumbnail" class="search-result-card__thumbnail-img">
@@ -86,7 +87,8 @@ function generateSearchResults(containerId, count) {
         <div class="search-result-card__info-stats">${formattedViews} visualizaciones • hace ${timeAgo}</div>
         <div class="search-result-card__info-channel">
           <img src="${channelImg}" alt="Channel">
-          <span>${randomChannel}</span>
+          <!-- Reemplazamos el nombre del canal por el ícono de Google -->
+          <span><i class="material-icons">google</i></span>
         </div>
         <div class="search-result-card__info-description">${randomDescription}</div>
       </div>
@@ -96,7 +98,7 @@ function generateSearchResults(containerId, count) {
   }
 }
 
-// Helper function to format views
+
 function formatViews(views) {
   if (views >= 1000000) {
     return `${(views / 1000000).toFixed(1)}M`
@@ -107,11 +109,9 @@ function formatViews(views) {
   }
 }
 
-// Helper function to generate random time ago
 function generateRandomTimeAgo() {
   const units = ["minutos", "horas", "días", "semanas", "meses", "años"]
   const unit = units[Math.floor(Math.random() * units.length)]
   const value = Math.floor(Math.random() * 10) + 1
   return `${value} ${unit}`
 }
-

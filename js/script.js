@@ -1,12 +1,12 @@
-// Wait for DOM to be fully loaded
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Generate random videos for the main page
+
   generateVideos("videos-container", 8)
   generateShorts("shorts-container", 6)
   generateVideos("more-videos-container", 8)
 })
 
-// Function to generate random videos
+
 function generateVideos(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
@@ -18,27 +18,27 @@ function generateVideos(containerId, count) {
       window.location.href = "video.html"
     }
 
-    // Generate random duration
+
     const minutes = Math.floor(Math.random() * 30) + 1
     const seconds = Math.floor(Math.random() * 60)
     const duration = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`
 
-    // Generate random views
+
     const views = Math.floor(Math.random() * 10000000)
     const formattedViews = formatViews(views)
 
-    // Generate random time
+
     const timeAgo = generateRandomTimeAgo()
 
-    // Generate random thumbnail
+
     const randomId = Math.floor(Math.random() * 1000)
     const thumbnailUrl = `https://picsum.photos/id/${randomId}/300/168`
 
-    // Generate random channel
+ 
     const channelId = Math.floor(Math.random() * 10) + 1
     const channelImg = `assets/channels/channel${channelId <= 4 ? channelId : 1}.jpg`
 
-    // Generate random title
+  
     const titles = [
       "Tutorial completo de HTML y CSS para principiantes",
       "Aprende JavaScript en 1 hora - Curso intensivo",
@@ -53,7 +53,7 @@ function generateVideos(containerId, count) {
     ]
     const randomTitle = titles[Math.floor(Math.random() * titles.length)]
 
-    // Generate random channel name
+  
     const channels = [
       "Tutoriales HTML",
       "CSS Masters",
@@ -89,7 +89,7 @@ function generateVideos(containerId, count) {
   }
 }
 
-// Function to generate random shorts
+
 function generateShorts(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
@@ -98,15 +98,14 @@ function generateShorts(containerId, count) {
     const shortCard = document.createElement("div")
     shortCard.className = "short-card"
 
-    // Generate random views
+  
     const views = Math.floor(Math.random() * 10000000)
     const formattedViews = formatViews(views)
 
-    // Generate random thumbnail (vertical for shorts)
     const randomId = Math.floor(Math.random() * 1000)
     const thumbnailUrl = `https://picsum.photos/id/${randomId}/180/320`
 
-    // Generate random title
+
     const titles = [
       "Truco de CSS que no conocías",
       "Aprende este atajo de teclado",
@@ -135,7 +134,7 @@ function generateShorts(containerId, count) {
   }
 }
 
-// Helper function to format views
+
 function formatViews(views) {
   if (views >= 1000000) {
     return `${(views / 1000000).toFixed(1)}M`
@@ -146,7 +145,7 @@ function formatViews(views) {
   }
 }
 
-// Helper function to generate random time ago
+
 function generateRandomTimeAgo() {
   const units = ["minutos", "horas", "días", "semanas", "meses", "años"]
   const unit = units[Math.floor(Math.random() * units.length)]

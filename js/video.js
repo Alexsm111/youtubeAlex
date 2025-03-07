@@ -1,13 +1,13 @@
-// Wait for DOM to be fully loaded
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Generate suggested videos
+  
   generateSuggestedVideos("suggested-videos-container", 15)
 
-  // Generate comments
+ 
   generateComments("comments-container", 10)
 })
 
-// Function to generate suggested videos
+
 function generateSuggestedVideos(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
@@ -19,28 +19,27 @@ function generateSuggestedVideos(containerId, count) {
       window.location.href = "video.html"
     }
 
-    // Generate random duration
+ 
     const minutes = Math.floor(Math.random() * 30) + 1
     const seconds = Math.floor(Math.random() * 60)
     const duration = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`
 
-    // Generate random views
+    
     const views = Math.floor(Math.random() * 10000000)
     const formattedViews = formatViews(views)
 
-    // Generate random time
+    
     const timeAgo = generateRandomTimeAgo()
 
-    // Generate random thumbnail
-    const randomId = Math.floor(Math.random() * 1000)
+     const randomId = Math.floor(Math.random() * 1000)
     const thumbnailUrl = `https://picsum.photos/id/${randomId}/168/94  * 1000);
     const thumbnailUrl = \`https://picsum.photos/id/${randomId}/168/94`
 
-    // Generate random channel
+    
     const channelId = Math.floor(Math.random() * 10) + 1
     const channelImg = `assets/channels/channel${channelId <= 4 ? channelId : 1}.jpg`
 
-    // Generate random title
+    
     const titles = [
       "Tutorial completo de HTML y CSS para principiantes",
       "Aprende JavaScript en 1 hora - Curso intensivo",
@@ -55,7 +54,7 @@ function generateSuggestedVideos(containerId, count) {
     ]
     const randomTitle = titles[Math.floor(Math.random() * titles.length)]
 
-    // Generate random channel name
+    
     const channels = [
       "Tutoriales HTML",
       "CSS Masters",
@@ -86,7 +85,7 @@ function generateSuggestedVideos(containerId, count) {
   }
 }
 
-// Function to generate comments
+
 function generateComments(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
@@ -95,17 +94,16 @@ function generateComments(containerId, count) {
     const comment = document.createElement("div")
     comment.className = "comment"
 
-    // Generate random profile
+    
     const profileId = Math.floor(Math.random() * 10) + 1
     const profileImg = `assets/profiles/profile${profileId <= 4 ? profileId : 1}.jpg`
 
-    // Generate random time
     const timeAgo = generateRandomTimeAgo()
 
-    // Generate random likes
+
     const likes = Math.floor(Math.random() * 1000)
 
-    // Generate random author
+  
     const authors = [
       "Usuario123",
       "WebDeveloper",
@@ -120,7 +118,7 @@ function generateComments(containerId, count) {
     ]
     const randomAuthor = authors[Math.floor(Math.random() * authors.length)]
 
-    // Generate random comment text
+  
     const comments = [
       "Excelente tutorial, me ha ayudado mucho a entender HTML. ¡Gracias por compartir!",
       "Muy bien explicado, ahora entiendo mucho mejor cómo funciona CSS con HTML.",
@@ -163,7 +161,7 @@ function generateComments(containerId, count) {
   }
 }
 
-// Helper function to format views
+
 function formatViews(views) {
   if (views >= 1000000) {
     return `${(views / 1000000).toFixed(1)}M`
@@ -174,7 +172,7 @@ function formatViews(views) {
   }
 }
 
-// Helper function to generate random time ago
+
 function generateRandomTimeAgo() {
   const units = ["minutos", "horas", "días", "semanas", "meses", "años"]
   const unit = units[Math.floor(Math.random() * units.length)]
