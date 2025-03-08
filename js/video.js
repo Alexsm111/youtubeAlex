@@ -1,16 +1,18 @@
-
+// Mantenemos el evento DOMContentLoaded para asegurar que el DOM esté cargado
 document.addEventListener("DOMContentLoaded", () => {
-  
+  // Generamos los videos sugeridos
   generateSuggestedVideos("suggested-videos-container", 15)
-
- 
+  // Generamos los comentarios
   generateComments("comments-container", 10)
 })
 
-
+// Función para generar videos sugeridos
 function generateSuggestedVideos(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
+
+  // Limpiamos el contenedor antes de agregar nuevos videos
+  container.innerHTML = ''
 
   for (let i = 0; i < count; i++) {
     const suggestedVideo = document.createElement("div")
@@ -19,26 +21,20 @@ function generateSuggestedVideos(containerId, count) {
       window.location.href = "video.html"
     }
 
- 
     const minutes = Math.floor(Math.random() * 30) + 1
     const seconds = Math.floor(Math.random() * 60)
     const duration = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`
-
     
     const views = Math.floor(Math.random() * 10000000)
     const formattedViews = formatViews(views)
-
     
     const timeAgo = generateRandomTimeAgo()
 
-     const randomId = Math.floor(Math.random() * 1000)
-    const thumbnailUrl = `https://picsum.photos/id/${randomId}/168/94  * 1000);
-    const thumbnailUrl = \`https://picsum.photos/id/${randomId}/168/94`
-
+    const randomId = Math.floor(Math.random() * 1000)
+    const thumbnailUrl = `https://picsum.photos/id/${randomId}/168/94`
     
     const channelId = Math.floor(Math.random() * 10) + 1
     const channelImg = `assets/channels/channel${channelId <= 4 ? channelId : 1}.jpg`
-
     
     const titles = [
       "Tutorial completo de HTML y CSS para principiantes",
@@ -53,7 +49,6 @@ function generateSuggestedVideos(containerId, count) {
       "Cómo optimizar el rendimiento de tu sitio web",
     ]
     const randomTitle = titles[Math.floor(Math.random() * titles.length)]
-
     
     const channels = [
       "Tutoriales HTML",
@@ -85,24 +80,24 @@ function generateSuggestedVideos(containerId, count) {
   }
 }
 
-
+// Función para generar comentarios
 function generateComments(containerId, count) {
   const container = document.getElementById(containerId)
   if (!container) return
 
+  // Limpiamos el contenedor antes de agregar nuevos comentarios
+  container.innerHTML = ''
+
   for (let i = 0; i < count; i++) {
     const comment = document.createElement("div")
     comment.className = "comment"
-
     
     const profileId = Math.floor(Math.random() * 10) + 1
     const profileImg = `assets/profiles/profile${profileId <= 4 ? profileId : 1}.jpg`
 
     const timeAgo = generateRandomTimeAgo()
 
-
     const likes = Math.floor(Math.random() * 1000)
-
   
     const authors = [
       "Usuario123",
@@ -117,7 +112,6 @@ function generateComments(containerId, count) {
       "ProgrammingStudent",
     ]
     const randomAuthor = authors[Math.floor(Math.random() * authors.length)]
-
   
     const comments = [
       "Excelente tutorial, me ha ayudado mucho a entender HTML. ¡Gracias por compartir!",
@@ -161,7 +155,7 @@ function generateComments(containerId, count) {
   }
 }
 
-
+// Función para formatear el número de vistas
 function formatViews(views) {
   if (views >= 1000000) {
     return `${(views / 1000000).toFixed(1)}M`
@@ -172,7 +166,7 @@ function formatViews(views) {
   }
 }
 
-
+// Función para generar un tiempo aleatorio
 function generateRandomTimeAgo() {
   const units = ["minutos", "horas", "días", "semanas", "meses", "años"]
   const unit = units[Math.floor(Math.random() * units.length)]
@@ -180,3 +174,6 @@ function generateRandomTimeAgo() {
   return `${value} ${unit}`
 }
 
+// Aseguramos que las funciones estén disponibles globalmente
+window.generateSuggestedVideos = generateSuggestedVideos;
+window.generateComments = generateComments;
